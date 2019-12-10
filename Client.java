@@ -68,6 +68,7 @@ public void printSer(String o) {
 	message.append("Server: "+o+"\n");
 	
 }
+
 public void printSer1()throws Exception{
 
 	Socket s=new Socket("localhost",3333); 
