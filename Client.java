@@ -3,8 +3,12 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class Client{  
-    public Client(){
+public class Client implements ActionListener{
+  JButton sendBtn;
+  JTextArea message;
+  JTextField sendTxt;
+  String userName;
+  public Client(){
     String userName = JOptionPane.showInputDialog("User´s name");
     JFrame window = new JFrame("TrinityChat");
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,6 +18,7 @@ public class Client{
     subPanel.setLayout(new BorderLayout());
     message=new JTextArea();
     sendBtn=new JButton("Send");
+    sendBtn.addActionListener(this);
     sendTxt=new JTextField();
     JLabel label1=new JLabel(userName+": ");
     subPanel.add(label1,BorderLayout.WEST);
@@ -28,6 +33,13 @@ window.setSize(600,600);
 window.setVisible(true);
 
   }
+    public void actionPerformed(ActionEvent evt){
+if( evt.getSource() == sendBtn ){
+  String m=sendTxt.getText();
+  message.append(m);
+}
+
+    }
 public static void main(String args[])throws Exception{
 Socket s=new Socket("localhost",3333);
 DataInputStream din=new DataInputStream(s.getInputStream());
