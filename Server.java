@@ -16,6 +16,9 @@ str2=br.readLine();
 dout.writeUTF(str2);
 dout.flush();
 }
+  		//Socket enviaDestinatario=new Socket("localhost",5555);
+		
+		//DataOutputStream dou1=new DataOutputStream(enviaDestinatario.getOutputStream());
 din.close();
 s.close();
 ss.close();
