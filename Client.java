@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 public class Client{  
     public Client(){
+    String userName = JOptionPane.showInputDialog("User´s name");
     JFrame window = new JFrame("TrinityChat");
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     JPanel main =  new JPanel();
@@ -12,10 +13,12 @@ public class Client{
     JPanel subPanel=new JPanel();
     subPanel.setLayout(new BorderLayout());
     message=new JTextArea();
-    sendBtn=new JButton();
+    sendBtn=new JButton("Send");
     sendTxt=new JTextField();
+    JLabel label1=new JLabel(userName+": ");
+    subPanel.add(label1,BorderLayout.WEST);
     subPanel.add(sendBtn,BorderLayout.EAST);
-    subPanel.add(sendTxt,BorderLayout.WEST);
+    subPanel.add(sendTxt,BorderLayout.CENTER);
     main.add(message,BorderLayout.CENTER);
     main.add(subPanel,BorderLayout.SOUTH);
 
