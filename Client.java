@@ -1,5 +1,8 @@
 import java.net.*;
 import java.io.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 public class Client{  
     public Client(){
     JFrame window = new JFrame("TrinityChat");
