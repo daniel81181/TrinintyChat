@@ -1,6 +1,27 @@
 import java.net.*;
 import java.io.*;
 public class Client{  
+    public Client(){
+    JFrame window = new JFrame("TrinityChat");
+    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JPanel main =  new JPanel();
+    main.setLayout(new BorderLayout() );
+    JPanel subPanel=new JPanel();
+    subPanel.setLayout(new BorderLayout());
+    message=new JTextArea();
+    sendBtn=new JButton();
+    sendTxt=new JTextField();
+    subPanel.add(sendBtn,BorderLayout.EAST);
+    subPanel.add(sendTxt,BorderLayout.WEST);
+    main.add(message,BorderLayout.CENTER);
+    main.add(subPanel,BorderLayout.SOUTH);
+
+    window.getContentPane().add(main);
+
+window.setSize(600,600);
+window.setVisible(true);
+
+  }
 public static void main(String args[])throws Exception{
 Socket s=new Socket("localhost",3333);
 DataInputStream din=new DataInputStream(s.getInputStream());
